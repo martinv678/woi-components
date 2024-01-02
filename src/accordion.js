@@ -1,35 +1,37 @@
 class WoiAccordion extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-  }
+    constructor() {
+        super()
+        this.attachShadow({ mode: 'open' })
+    }
 
-  connectedCallback() {
-    this.render();
-    this.addEventListeners();
-  }
+    connectedCallback() {
+        this.render()
+        this.addEventListeners()
+    }
 
-  addEventListeners() {
-    const items = this.querySelectorAll("woi-accordion-item");
+    addEventListeners() {
+        const items = this.querySelectorAll('woi-accordion-item')
 
-    items.forEach((item, i) => {
-      item.addEventListener("click", (event) => {
-        const openItem = this.querySelector("woi-accordion-item[open=true]");
+        items.forEach((item) => {
+            item.addEventListener('click', (event) => {
+                const openItem = this.querySelector(
+                    'woi-accordion-item[open=true]'
+                )
 
-        if (openItem) {
-          openItem.removeAttribute("open");
-        }
+                if (openItem) {
+                    openItem.removeAttribute('open')
+                }
 
-        event.currentTarget.setAttribute(
-          "open",
-          event.currentTarget !== openItem
-        );
-      });
-    });
-  }
+                event.currentTarget.setAttribute(
+                    'open',
+                    event.currentTarget !== openItem
+                )
+            })
+        })
+    }
 
-  render() {
-    this.shadowRoot.innerHTML = `
+    render() {
+        this.shadowRoot.innerHTML = `
             <style>
                 :host {
                     display: block;
@@ -37,39 +39,41 @@ class WoiAccordion extends HTMLElement {
                 }
             </style>
             <slot></slot>
-        `;
-  }
+        `
+    }
 }
 
 class WoiAccordionItem extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-    this.height = 0;
-  }
-
-  static get observedAttributes() {
-    return ["open"];
-  }
-
-  attributeChangedCallback(name, _, newValue) {
-    if (name === "open") {
-      this.height =
-        newValue === "true"
-          ? this.shadowRoot.querySelector(".body").scrollHeight
-          : 0;
-
-      this.shadowRoot.querySelector(".body").style.height = `${this.height}px`;
+    constructor() {
+        super()
+        this.attachShadow({ mode: 'open' })
+        this.height = 0
     }
-  }
 
-  connectedCallback() {
-    this.render();
-  }
+    static get observedAttributes() {
+        return ['open']
+    }
 
-  render() {
-    const label = this.getAttribute("label");
-    this.shadowRoot.innerHTML = `
+    attributeChangedCallback(name, _, newValue) {
+        if (name === 'open') {
+            this.height =
+                newValue === 'true'
+                    ? this.shadowRoot.querySelector('.body').scrollHeight
+                    : 0
+
+            this.shadowRoot.querySelector(
+                '.body'
+            ).style.height = `${this.height}px`
+        }
+    }
+
+    connectedCallback() {
+        this.render()
+    }
+
+    render() {
+        const label = this.getAttribute('label')
+        this.shadowRoot.innerHTML = `
             <style>
                 :host {
                     display: block;
@@ -115,9 +119,9 @@ class WoiAccordionItem extends HTMLElement {
                     <slot></slot>
                 </div>
             </div>
-        `;
-  }
+        `
+    }
 }
 
-customElements.define("woi-accordion", WoiAccordion);
-customElements.define("woi-accordion-item", WoiAccordionItem);
+customElements.define('woi-accordion', WoiAccordion)
+customElements.define('woi-accordion-item', WoiAccordionItem)
