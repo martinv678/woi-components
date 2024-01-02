@@ -9,3 +9,13 @@ I am not precious, everything is rough right now and this is just an idea. I wan
 Talking about code? How about utils while we're at it, drop these in.
 
 The goal is to stop us repeating ourselves as we don't have much time left, ChatGPT is after our jobs and she doesn't sleep.
+
+### How components are currently split...
+
+I have few components right now, so the structure has yet to be decided. I have opted for no Typescript but I reckon it should be involved. Right now, I see Vanilla, React, Angular etc folders added to the project. Then happy users can import or just copy and paste straight from Git.
+
+The accordion currently works like this:
+
+`import 'woi-components/accordion'`
+
+As it's a Web Component it will add it to the `customElements`.
