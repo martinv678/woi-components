@@ -1,4 +1,4 @@
-# Woi Components
+# The Woi vision
 
 What?! Another component library? Yeah you heard, another one. But where others have failed Neo, Woi will succeed. Woi will be a library of everyday components for UI development. This should save you / me hours, because do we really need a billion accordions and carousels... no.
 
