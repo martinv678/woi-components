@@ -77,11 +77,10 @@ class WoiAccordionItem extends HTMLElement {
             <style>
                 :host {
                     display: block;
-                    border-bottom: 1px solid var(--form-border-gray);
+                    border-bottom: 1px solid var(--woi-accordion-item-border-color);
                 }
 
                 button {
-                    font-family: Inter, sans-serif;
                     display: block;
                     width: 100%;
                     background-color: transparent;
@@ -99,8 +98,8 @@ class WoiAccordionItem extends HTMLElement {
                     overflow: hidden;
                     opacity: 0;
                     height: 0;
-                    transition: all 0.3s;
-                    -webkit-transition: all 0.3s; 
+                    transition: all var(--woi-accordion-transition-duration, 300ms);
+                    -webkit-transition: all var(--woi-accordion-transition-duration, 300ms); 
                 }
 
                 .body-inner {
