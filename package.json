@@ -1,10 +1,10 @@
 {
     "name": "woi-components",
-    "version": "0.0.104",
-    "description": "What?! Another component library? Yeah you heard, another one. But where others have failed Neo, Woi will succeed. Woi will be a library of everyday components for UI development. This should save you / me hours, because do we really need a billion accordions and carousels... no.",
+    "version": "0.0.105",
+    "description": "A reusable components library for every JS project.",
     "main": "index.js",
     "files": [
-        "dist"
+        "src"
     ],
     "scripts": {
         "clean": "rimraf dist",

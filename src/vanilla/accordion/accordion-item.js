@@ -80,3 +80,5 @@ export class WoiAccordionItem extends HTMLElement {
         `
     }
 }
+
+customElements.define('woi-accordion-item', WoiAccordionItem)
