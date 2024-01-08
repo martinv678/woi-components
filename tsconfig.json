@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "paths": {
+            "@woi-components/vanilla/accordion": [
+                "./packages/vanilla/accordion/src"
+            ]
+        }
+    }
+}

@@ -4,8 +4,19 @@
     "description": "What?! Another component library? Yeah you heard, another one. But where others have failed Neo, Woi will succeed. Woi will be a library of everyday components for UI development. This should save you / me hours, because do we really need a billion accordions and carousels... no.",
     "main": "index.js",
     "files": [
-        "vanilla"
+        "dist"
     ],
-    "scripts": {},
-    "author": "Luca \"Woi\" Ferrari"
+    "scripts": {
+        "clean": "rimraf dist",
+        "build": "parcel build 'packages/*/*/'"
+    },
+    "author": "Luca \"Woi\" Ferrari",
+    "devDependencies": {
+        "@parcel/packager-ts": "^2.10.3",
+        "@parcel/transformer-typescript-types": "^2.10.3",
+        "@types/node": "^20.10.6",
+        "parcel": "^2.10.3",
+        "rimraf": "^5.0.5",
+        "typescript": "^5.3.3"
+    }
 }

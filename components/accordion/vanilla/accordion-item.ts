@@ -1,49 +1,6 @@
-class WoiAccordion extends HTMLElement {
-    constructor() {
-        super()
-        this.attachShadow({ mode: 'open' })
-    }
+export class WoiAccordionItem extends HTMLElement {
+    private height: number
 
-    connectedCallback() {
-        this.render()
-        this.addEventListeners()
-    }
-
-    addEventListeners() {
-        const items = this.querySelectorAll('woi-accordion-item')
-
-        items.forEach((item) => {
-            item.addEventListener('click', (event) => {
-                const openItem = this.querySelector(
-                    'woi-accordion-item[open=true]'
-                )
-
-                if (openItem) {
-                    openItem.removeAttribute('open')
-                }
-
-                event.currentTarget.setAttribute(
-                    'open',
-                    event.currentTarget !== openItem
-                )
-            })
-        })
-    }
-
-    render() {
-        this.shadowRoot.innerHTML = `
-            <style>
-                :host {
-                    display: block;
-                    max-width: 650px;
-                }
-            </style>
-            <slot></slot>
-        `
-    }
-}
-
-class WoiAccordionItem extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: 'open' })
@@ -54,16 +11,16 @@ class WoiAccordionItem extends HTMLElement {
         return ['open']
     }
 
-    attributeChangedCallback(name, _, newValue) {
-        if (name === 'open') {
-            this.height =
-                newValue === 'true'
-                    ? this.shadowRoot.querySelector('.body').scrollHeight
-                    : 0
+    attributeChangedCallback(name: string, _: string, newValue: string) {
+        if (!this.shadowRoot) return
 
-            this.shadowRoot.querySelector(
+        if (name === 'open') {
+            const body = this.shadowRoot.querySelector(
                 '.body'
-            ).style.height = `${this.height}px`
+            ) as HTMLDivElement
+
+            this.height = newValue === 'true' ? body.scrollHeight : 0
+            body.style.height = `${this.height}px`
         }
     }
 
@@ -72,7 +29,9 @@ class WoiAccordionItem extends HTMLElement {
     }
 
     render() {
+        if (!this.shadowRoot) return
         const label = this.getAttribute('label')
+
         this.shadowRoot.innerHTML = `
             <style>
                 :host {
@@ -121,6 +80,3 @@ class WoiAccordionItem extends HTMLElement {
         `
     }
 }
-
-customElements.define('woi-accordion', WoiAccordion)
-customElements.define('woi-accordion-item', WoiAccordionItem)

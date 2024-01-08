@@ -1,21 +1,48 @@
-# The Woi Vision
+# Woi Components - Manifesto
 
-What?! Another component library? Yeah you heard, another one. But where others have failed Neo, Woi will succeed. Woi will be a library of everyday components for UI development. This should save you / me hours, because do we really need a billion accordions and carousels... no.
+## Introduction
 
-Each components is meant to be a starting block to copy and paste into your project. I floated the idea of this on Reddit and people start crying "but my button might need rounded edges and yours may not have them", well just add rounded edges. Add your own click events. Do what the f$%! you need to for your project but please don't start fresh as 100% what you need to build has been built before.
+Welcome to Woi Components, a component library designed to save thousands of hours of dev time. Our mission is to eliminate redundant coding efforts by offering a huge suite of reusable Vanilla Web Components and JS Library & Framework components that act as a base for your components.
 
-I am not precious, everything is rough right now and this is just an idea. I want this to be community lead, I have 2 kids so time is short. I'd love to see people dumping their killer components in here. Got something in Angular cool drop it in. Have a nice little React component, great let's see that sh!t!.
+This library is not just a tool; it's a movement towards more efficient, shared development.
 
-Talking about code? How about utils while we're at it, drop these in.
+## Vision
 
-The goal is to stop us repeating ourselves as we don't have much time left, ChatGPT is after our jobs and she doesn't sleep.
+Our vision is a world where developers collaborate to create a universally accessible set of UI components. We're not just building a library; we're cultivating a community where every member contributes to the evolution of web development practices.
 
-### How components are currently split...
+## Core Principles
 
-I have few components right now, so the structure has yet to be decided. I have opted for no Typescript but I reckon it should be involved. Right now, I see Vanilla, React, Angular etc folders added to the project. Then happy users can import or just copy and paste straight from Git.
+1. **Reusability and Efficiency:** Components will be designed for maximum reusability, ensuring efficient and consistent development workflows.
+2. **Customizability:** Flexible components that adapt to various design systems and project requirements.
+3. **Community-Driven:** A library powered by a diverse community of developers, embracing collaborative growth and innovation.
+4. **Performance and Accessibility:** High-performing, accessible components for an inclusive user experience.
+5. **Simplicity in Design:** Focusing on intuitive interfaces and clear documentation for an enjoyable development experience.
 
-The accordion currently works like this:
+## Community Contributions
 
-`import 'woi-components/accordion'`
+### Submitting Your Components
 
-As it's a Web Component it will add it to the `customElements`.
+-   **Open to All:** Anyone can contribute their components. Whether you're a seasoned developer or a newcomer, your contributions are valuable to us.
+-   **Guidelines and Standards:** We provide clear guidelines for component submission to maintain quality and consistency. Ensure your components meet our standards in terms of performance, accessibility, and reusability.
+-   **Review Process:** Submitted components go through a community-led review process, ensuring that only the best make it to the library.
+
+### Collaborative Development
+
+-   **Beyond a Core Team:** While we have a dedicated team to maintain the library, we believe the true potential lies in community collaboration.
+-   **Community Governance:** Decisions about new features, major changes, and roadmap priorities are made through open community discussions and consensus.
+-   **Active Participation:** We encourage active involvement from the community in all aspects - from contributing code to decision-making and support.
+
+## What to Expect
+
+We expect that this library will not be a one size fits all approach. It can never be, everyone has different standard and expectations. What this is a starting block which you can then edit and adapt to your needs.
+
+There could be multiple versions of the same component, and it's up to you as the developer to choose which fits your need the best.
+
+## Getting Started
+
+TBC
+
+## Contributing
+
+-   **How to Contribute:** Detailed instructions on how to contribute, be it through code, documentation, community support, or feedback.
+-   **Code of Conduct:** A commitment to an inclusive and respectful environment for all contributors.
